@@ -1,5 +1,5 @@
 # Data
-# /data/
+/data/
 
 # Mac OS-specific storage files
 .DS_Store
@@ -139,6 +139,9 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
+# Conda environment files created by conda env export
+.env_temp.yml
 
 # Spyder project settings
 .spyderproject

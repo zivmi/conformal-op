@@ -1,6 +1,39 @@
-# conformal-op
+# Conformal Option Pricing <!-- omit in toc -->
 
 Reproduction of "Conformal prediction of option prices" by Joao A. Bastos, with some extensions.
+
+## TL;DR: <!-- omit in toc -->
+
+- [Introduction](#introduction)
+- [Project Setup](#project-setup)
+- [Project Organization](#project-organization)
+
+## Introduction
+
+## Project Setup
+
+### Conda <!-- omit in toc -->
+
+Using conda, create a new environment with the necessary packages:
+
+```bash
+conda env create -f environment.yml
+```
+
+Or visit the [conda documentation](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file) for more information.
+
+### Simulate data <!-- omit in toc -->
+
+To simulate data, run the following command from the root directory of the project:
+
+```bash
+python src/simulations/simulate_data.py
+```
+
+This will create a csv file of ~35mb in the `data/simulated` directory. The code for simulation and
+a peak into the output is given in the notebook `notebooks/1.0-mz-simulate-data.ipynb`. Parameters
+of simulation are stored in `src/simulations/config.py`.
+
 
 ## Project Organization
 
@@ -30,8 +63,10 @@ Reproduction of "Conformal prediction of option prices" by Joao A. Bastos, with 
 ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc. 
 │   └── figures        <- Generated graphics and figures to be used in reporting
 │
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `conda list -e > requirements.txt`
+├── environment.yml   <- The requirements file for reproducing the analysis environment, e.g.
+│                         generated with `conda env export > .env_temp.yml` and then manually copy
+│                         the main packages to `environment.yml`, like lightgbm, crepes, etc. 
+│                         Let `conda` handle other dependencies.
 │
 └── src                <- Source code for use in this project.
     │
